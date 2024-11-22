@@ -4,7 +4,7 @@
 
 <div align="center">
 
-<img src="" alt="homepage">
+<img src="/images/homepage.png" alt="homepage">
 
 <p align="center">MENOCARE was built to Personalized wellness support through Menopause ...
 <br/>
