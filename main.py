@@ -33,7 +33,7 @@ st.write('<p class="custom-paragraph">Your personalized wellness support through
 
 from profiles import create_profile, get_notes, get_profile
 from form_submit import update_personal_info, add_note, delete_note
-from ai import get_macros
+from ai import get_macros, ask_ai
 
 
 
@@ -207,6 +207,37 @@ def macros():
                     carbs=carbs
                 )
             st.success("Nutrition information saved.")
+
+@st.fragment()
+def notes():
+    st.subheader("Notes: ")
+    for i, note in enumerate(st.session_state.notes):
+        cols = st.columns([5, 1])
+        with cols[0]:
+            st.text(note.get("text"))
+            with cols[1]:
+                if st.button("Delete", key=i):
+                    delete_note(note.get("_id"))
+                    st.session_state.notes.pop(i)
+                    st.rerun()
+                    
+    new_note = st.text_input("Add a new note: ")
+    if st.button("Add Note"):
+        if new_note:
+            note = add_note(new_note, st.session_state.profile_id)
+            st.session_state.notes.append(note)
+            st.rerun()
+            
+@st.fragment()
+def ask_ai_func():
+    st.subheader("Ask AI")
+    user_question = st.text_input("Ask AI a question: ")
+    if st.button("Ask AI"):
+        with st.spinner():
+            result = ask_ai(st.session_state.profile, user_question)
+            st.write(result)
+        
+        
                         
 def forms():
     if "profile" not in st.session_state:
@@ -224,6 +255,8 @@ def forms():
     personal_data_form()
     goals_form()
     macros()
+    notes()
+    ask_ai_func()
     
 if __name__ == "__main__":
     forms()
