@@ -1,6 +1,37 @@
 import streamlit as st
 
-st.title("Personal Fitness Tool")
+st.set_page_config(
+    page_title = "MenoCare | Wellness Through Menopause",
+    page_icon = "images/favicon.ico"
+)
+
+st.markdown(
+    """
+    <style>
+        .stImage img {
+            position: absolute;
+            top: -50px;  
+            right: -400px; 
+            width: 150px; 
+            z-index: 1000; 
+        }
+        .block-container {
+            padding-top: 100px;
+        }
+        .custom-paragraph {
+            margin-bottom: 28px;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.image("images/MenoCare.png", width=350, caption=None)
+    
+st.title("Welcome to MENOCARE")
+st.write('<p class="custom-paragraph">Your personalized wellness support through menopause</p>', unsafe_allow_html=True)
+
+
 
 @st.fragment()
 def personal_data_form():
