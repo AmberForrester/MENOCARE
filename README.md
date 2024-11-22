@@ -1,6 +1,6 @@
 <a id="readme-top"></a>
 
-<h1 align="center">MENOCARE | Personalized wellness support through Menopause :female_sign:</h1> 
+<h1 align="center">MENOCARE :cherry_blossom:</h1> 
 
 <div align="center">
 
