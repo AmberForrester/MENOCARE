@@ -1,15 +1,15 @@
 <a id="readme-top"></a>
 
-<h1 align="center">MENOCARE | Personalized wellness support through Menopause 	:female_sign:</h1> 
+<h1 align="center">MENOCARE | Personalized wellness support through Menopause :female_sign:</h1> 
 
 <div align="center">
 
 <img src="" alt="homepage">
 
-<p align="center">LiveDocs is a powerful SaaS collaborative editor designed for seamless real-time collaboration. Built to replicate the intuitive functionality of Google Docs, it combines the latest web technologies to create an elegant, responsive, and efficient document editing experience.  
+<p align="center">MENOCARE was built to Personalized wellness support through Menopause ...
 <br/>
 <br/>
-Whether you're a writer, editor, or part of a collaborative team, LiveDocs empowers you to create, share, and collaborate with ease!
+....
 <br />
 
 <a href="">MENOCARE Live Link</a>
