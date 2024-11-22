@@ -5,28 +5,14 @@ import requests
 from typing import Optional
 import json
 import os
-# import nest_asyncio
 
-
-# # Apply nest_asyncio patch to allow nested loops
-# nest_asyncio.apply()
-
-# Load environment variables
 load_dotenv()
 
 BASE_API_URL = "https://api.langflow.astra.datastax.com"
 LANGFLOW_ID = "32d6adb8-f324-415d-9ad3-21d9729c1098"
 APPLICATION_TOKEN = os.getenv("LANGFLOW_TOKEN")
 
-# from astrapy import DataAPIClient
 
-# # Initialize the client
-# client = DataAPIClient("ASTRA_DBTOKEN")
-# db = client.get_database_by_api_endpoint(
-#   "https://4cab54ff-3f23-4408-9714-a8c432bd71dc-us-east-2.apps.astra.datastax.com"
-# )
-
-# print(f"Connected to Astra DB: {db.list_collection_names()}")
 
 def dict_to_string(obj, level=0):
     strings = []
@@ -48,21 +34,18 @@ def dict_to_string(obj, level=0):
 
     return ", ".join(strings)
 
-
-
 def ask_ai(profile, question):
     TWEAKS = {
-        "TextInput-xYAYV": {
-            "input_value": question
+        "TextInput-tAjMP": {
+            "input_value": "question"
         },
-        "TextInput-12Lm7": {
+        "TextInput-CO7LN": {
             "input_value": dict_to_string(profile)
         },
         "AstraVectorStoreComponent": {
             "user_id": "divineintelligence3.0@gmail.com",
         },
     }
-
 
     result = run_flow_from_json(flow="AskAIV2.json",
                                 input_value="message",
