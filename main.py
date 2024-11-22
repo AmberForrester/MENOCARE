@@ -162,9 +162,52 @@ def macros():
     nutrition = st.container(border=True)
     nutrition.header("Macros Calculator")
     if nutrition.button("Generate with AI"):
+        result = get_macros(profile.get("general"), profile.get("goals"))
+        profile["nutrition"] = result
+        nutrition.success("AI has generated recommendations for Calories, Protein, Fat, and Carbs.")
+        
+    with nutrition.form("nutrition_form", border=False):
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+            calories = st.number_input(
+                "Calories",
+                min_value=0,
+                step=1,
+                value=profile["nutrition"].get("calories", 0),
+            )
+        with col2:
+            protein = st.number_input(
+                "Protein(g)",
+                min_value=0,
+                step=1,
+                value=profile["nutrition"].get("protein", 0),
+            )
+        with col3:
+            fat = st.number_input(
+                "Fat(g)",
+                min_value=0,
+                step=1,
+                value=profile["nutrition"].get("fat", 0),
+            )
+        with col4:
+            carbs = st.number_input(
+                "Carbs(g)",
+                min_value=0,
+                step=1,
+                value=profile["nutrition"].get("carbs", 0),
+            )
+        
+        if st.form_submit_button("Save"):
+            with st.spinner():
+                st.session_state.profile = update_personal_info(
+                    profile, "nutrition", 
+                    protein=protein, 
+                    calories=calories, 
+                    fat=fat, 
+                    carbs=carbs
+                )
+            st.success("Nutrition information saved.")
                         
-
-
 def forms():
     if "profile" not in st.session_state:
         profile_id = 1
@@ -180,6 +223,7 @@ def forms():
     
     personal_data_form()
     goals_form()
+    macros()
     
 if __name__ == "__main__":
     forms()
