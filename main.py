@@ -70,9 +70,15 @@ def personal_data_form():
         )
         activity_level = st.selectbox("Activity Level", activities)
         
+        st.subheader("Menopause Symptoms")
+        
         symptoms = (
             "Hot Flashes",
             "Night Sweats",
+            "Palpitations",
+            "Migraines",
+            "Menstrual Changes",
+            "Vaginal Changes",
             "Mood Swings",
             "Brain Fog",
             "Weight Gain",
@@ -81,7 +87,7 @@ def personal_data_form():
             "Joint Pain",
             "Bone Density Loss",
         )
-        menopause_symptoms = st.multiselect("Menopause Symptoms", symptoms)
+        menopause_symptoms = st.multiselect("Select your symptoms (choose as many that apply):", symptoms)
         
         personal_data_submit = st.form_submit_button("Save")
         if personal_data_submit:
