@@ -123,7 +123,7 @@ This step will prevent the `.env` file from being tracked by Git and keep your s
    streamlit run main.py
    ```
 
-2. Paste `_________` in your browser to view the project.
+2. Paste `http://localhost:8501` in your browser to view the project, if the browser does not automatically show up. 
 
 <p align="right">(<a href="#readme-top">top of page</a>)</p>
 

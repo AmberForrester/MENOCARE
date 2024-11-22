@@ -18,10 +18,6 @@ BASE_API_URL = "https://api.langflow.astra.datastax.com"
 LANGFLOW_ID = "32d6adb8-f324-415d-9ad3-21d9729c1098"
 APPLICATION_TOKEN = os.getenv("LANGFLOW_TOKEN")
 
-
-
-
-
 # from astrapy import DataAPIClient
 
 # # Initialize the client
@@ -31,6 +27,8 @@ APPLICATION_TOKEN = os.getenv("LANGFLOW_TOKEN")
 # )
 
 # print(f"Connected to Astra DB: {db.list_collection_names()}")
+
+
 
 def ask_ai(profile, question):
     TWEAKS = {
