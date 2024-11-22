@@ -1,6 +1,6 @@
 <a id="readme-top"></a>
 
-<h1 align="center">MENOCARE :cherry_blossom:</h1> 
+<h1 align="center">MENOCARE | Supporting Women Through Change :butterfly:</h1> 
 
 <div align="center">
 
