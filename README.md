@@ -65,6 +65,7 @@
 - []()
 - [OpenAI Platform](https://platform.openai.com/api-keys) - Create an account to receive your OpenAI key.
 - [DataStax Langflow]() - Create an account, create 2 flows (Macro Flow + Ask AI) 
+- [AstraDB](https://www.datastax.com/products/datastax-astra) - Create an account, create a "Serverless Database"
 
 
 
